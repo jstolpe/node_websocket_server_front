@@ -1,0 +1,86 @@
+body {
+	font-family: oswald
+}
+
+#user_key_container,
+#room_name_container,
+#room_user_count {
+	font-weight: bold;
+}
+
+.container-heading {
+	border-bottom: 1px dotted #333;
+	font-size: 14px;
+}
+
+.header {
+	border-bottom: 1px solid #e3e3e3;
+	margin-bottom: 20px;
+}
+
+.header-sub-title {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.header-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.left-bottom {
+	border: 1px solid #333;
+	border-radius: 3px;
+	width: 100%;
+	height: 200px;
+	float: left;
+	margin-top: 20px;
+}
+
+.left-top {
+	border: 1px solid #333;
+	border-radius: 3px;
+	width: 100%;
+	height: 200px;
+	float: left;
+}
+
+.main-content {
+	width: 100%;
+	display: inline-block;
+}
+
+.main-left {
+	width: 49%;
+	float: left;
+}
+
+.main-right {
+	width: 49%;
+	float: right;
+}
+
+.output-container {
+	font-size: 12px;
+	height: 160px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.output-container-right {
+	font-size: 12px;
+	height: 360px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.paddings {
+	padding: 5px;
+}
+
+.right-contents {
+	border: 1px solid #333;
+	border-radius: 3px;
+	width: 100%;
+	height: 400px;
+}
