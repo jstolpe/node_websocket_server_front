@@ -17,7 +17,8 @@
 		'room_name' => $roomName, // required! 
 		'first_name' =>$_POST['first_name'],
 		'last_name' => $_POST['last_name'],
-		'message' => $_POST['message']
+		'message' => $_POST['message'],
+		'user_key' => $_POST['user_key']
 	);
 
 	// encode data

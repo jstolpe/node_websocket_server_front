@@ -31,6 +31,7 @@
 			$(function(){ // do stuff on page load
 				// populate the user key and room name dom elements
 				$('#user_key_container').html( userKey );
+				$('#user_key').val( userKey );
 				$('#room_name_container').html( roomName );
 
 				$('#broadcast_button').on('click', function(){
@@ -112,6 +113,7 @@
 				customDataReceiver: function( data ) {
 		  			// create html to display the data the node websocket server just sent us about the room
 					var html = '<div class="output-row">' +
+						'<div><b>' + data.user_key + '</b></div>' +
 						'<div><b>' + data.first_name + ' ' + data.last_name + '</b>: ' + data.message + '</div>' +
 					'</div>';
 
@@ -157,6 +159,7 @@
 								<div class="input-row">
 									<input type="text" id="first_name" name="first_name" placeholder="first name" />
 									<input type="text" id="last_name" name="last_name" placeholder="last name" />
+									<input type="hidden" id="user_key" name="user_key" value="" />
 								</div>
 								<div class="input-row">
 									<textarea id="message" name="message" placeholder="broadcast message..."></textarea>
