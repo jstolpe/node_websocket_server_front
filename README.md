@@ -1,6 +1,6 @@
-# node_websocket_server
+# node_websocket_server_front
 
-[NODE WEBSOCKET SERVER REPO] - this MUST BE setup for the front end to work!
+[BACK END NODE WEBSOCKET SERVER REPO] - this MUST BE setup for the front end to work!
 https://github.com/jstolpe/node_websocket_server
 
 This repo will details how to connect a front end browser to a running node 
