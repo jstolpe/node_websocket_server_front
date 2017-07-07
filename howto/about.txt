@@ -2,6 +2,55 @@ About the node websocket server front end
 
 ==========================================================================
 
+[BACK END NODE WEBSOCKET SERVER REPO] - this MUST BE setup for the front end to work!
+https://github.com/jstolpe/node_websocket_server
+
+[Overview]
+To connect a user to a room on the node websocket server all you need to do is instantiate
+nwsdatahandler.js.
+
+[nwsDataHandler]
+Instantiate to connect a user to a room on the node websocket server. The 
+nwsdatahandler.js file does the heavly lifting so all you have to do is pass in a few 
+parameters and the front end is all setup to handle data received from the node
+websocket server. Here is the list of params required when instantiating:
+
+param -> websocketUrl: Url with the port the node websocket server is running on
+param -> userKey: Unique user key for joining the room
+param -> roomName: Name of the room we want the user joining
+param -> nodeServerDataReceiver( data ): this function receives data when a user joins/leaves
+		 a room on the node websocket server. Here is what the data object received by this 
+		 function looks like:
+
+		 data = {
+			 action: {
+				 name: 'join/leave',
+				 userKey: 'userKey'
+			 },
+			 room: {
+				 name: 'nameOfRoom',
+				 users: [ // array of userKey's currently in the room
+					 'userKey1', 
+					 'userKey2', 
+					 'userKey3',
+					 ...
+				 ] 
+			 }
+			 type: 'node', // this directs the data to be sent to nodeServerDataReceiver()
+		  }
+param -> customDataReceiver( data ): this function receives custom data allowing you to pass
+		 whatever data you want to users in any room. Here is what the data object received 
+		 by this function looks like:
+
+		 data = {
+			 room_name: 'roomName',
+			 type: 'custom' // this directs the data to be sent to nodeServerDataReceiver()
+			 ... // any data you decided to send along will show up here!!!
+
+[broadcast.php]
+This shows how to broadcast custom data to a room on the node websocket server. Data 
+broadcast will end up in the customDataReceiver( data ) function. From there the 
+front end can do as it pleases with the data.
 
 
 ==========================================================================

@@ -2,10 +2,44 @@ body {
 	font-family: oswald
 }
 
+input {
+	font-family: inherit;
+	border-radius: 5px;
+	border: 1px solid #e3e3e3;
+}
+
+textarea {
+	font-family: inherit;
+	border-radius: 5px;
+	border: 1px solid #e3e3e3;
+	width: 100%;
+}
+
+#broadcast_button {
+	border: 1px solid #00ff00;
+	display: inline-block;
+	background: #00ff00;
+	border-radius: 5px;
+	color: #333;
+	cursor: pointer;
+}
+
+#broadcast_button:hover {
+	color: #fff;
+	border: 1px solid #333;
+	background: #333;
+}
+
 #user_key_container,
 #room_name_container,
 #room_user_count {
 	font-weight: bold;
+}
+
+.broadcast-action {
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
 }
 
 .container-heading {
@@ -26,6 +60,11 @@ body {
 .header-title {
 	font-size: 30px;
 	font-weight: bold;
+}
+
+.input-row {
+	width: 100%;
+	margin-top: 5px;
 }
 
 .left-bottom {
@@ -67,11 +106,22 @@ body {
 	overflow-y: scroll;
 }
 
+.output-container-broadcast {
+	font-size: 12px;
+}
+
 .output-container-right {
 	font-size: 12px;
 	height: 360px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+}
+
+.output-row {
+	margin-bottom: 3px;
+	margin-top: 3px;
+	border-bottom: 1px solid #e3e3e3;
+	padding-bottom: 3px;
 }
 
 .paddings {
@@ -83,4 +133,11 @@ body {
 	border-radius: 3px;
 	width: 100%;
 	height: 400px;
+}
+
+.right-contents-broadcast {
+	border: 1px solid #333;
+	border-radius: 3px;
+	width: 100%;
+	margin-bottom: 20px;
 }

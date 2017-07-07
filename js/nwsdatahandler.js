@@ -11,6 +11,9 @@
  *			roomName: 'nameOfRoomUserIsJoining',
  *			nodeServerDataReceiver: function( data ) { 
  *				// do stuff with the data when node websocket server broadcasts data to the room
+ *			},
+ *			customDataReceiver: function( data ) { 
+ *				// do stuff when custom data is broadcast to the node websocket server
  *			}
  *		}
  * @license 
@@ -47,6 +50,9 @@ var nwsDataHandler = (function( args ) {
 	 *			roomName: 'nameOfRoomUserIsJoining',
 	 *			nodeServerDataReceiver: function( data ) { 
 	 *				// do stuff when node websocket server broadcasts data
+	 *			},
+	 *			customDataReceiver: function( data ) { 
+	 *				// do stuff when custom data is broadcast to the node websocket server
 	 *			}
 	 *		}
 	 *
@@ -67,6 +73,14 @@ var nwsDataHandler = (function( args ) {
 
 		    // bind function to self cause we love self
 		    self.nodeServerDataReceiver.bind(self);
+		}
+
+		if ( typeof args.customDataReceiver !== 'undefined' ) { // bind custom function
+			// get the function override passed in from args
+		    self.customDataReceiver = args.customDataReceiver;
+
+		    // bind function to self cause we love self
+		    self.customDataReceiver.bind(self);
 		}
 
 		// connect to the url the websocket server is on
@@ -126,8 +140,11 @@ var nwsDataHandler = (function( args ) {
 		var self = this;
 
 		self.socket.on(self.roomName, function( data ) { // listen to room
-			// handle data received from the node websocket server for the room
-			self.nodeServerDataReceiver( data );
+			if ( 'node' == data.type ) { // handle data received from the node websocket server for the room
+				self.nodeServerDataReceiver( data );
+	  		} else if ( 'custom' == data.type ) { // incoming custom data!
+	  			self.customDataReceiver( data );
+	  		}
 	  	});
 	};
 
