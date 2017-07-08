@@ -37,6 +37,15 @@ textarea {
 	font-weight: bold;
 }
 
+.all-contents {
+	width: 100%;
+}
+
+.all-sub-contents {
+	width: 1000px;
+	margin: 0 auto;
+}
+
 .broadcast-action {
 	width: 100%;
 	text-align: center;
@@ -141,4 +150,19 @@ textarea {
 	border-radius: 3px;
 	width: 100%;
 	margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+	.all-sub-contents {
+		width: 100%;
+	}
+
+	.main-left {
+		width: 100%;
+	}
+
+	.main-right {
+		width: 100%;
+		margin-top: 20px;
+	}
 }
