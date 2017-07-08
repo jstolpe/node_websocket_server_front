@@ -5,14 +5,39 @@ Run the front end and connect the browser to the node websocket server.
 [BACK END NODE WEBSOCKET SERVER REPO] - this MUST BE setup for the front end to work!
 https://github.com/jstolpe/node_websocket_server
 
+[Running The Example]
+Step 1: Make sure your node websocket server is running in the background.
+
+Step 2: Create a defines.php file in the example/folder.
+
+Step 3: Copy and paste the following code in the defines.php. Modify the define vars
+		as needed to work on your server.
+
+		<?php
+			// url to connect to the node websocket server
+			define( 'WEBSOCKET_URL', 'http://localhost:3000' );
+
+			// must match defines.js nodeServerHeaderKey in node_websocket_server repo for connections to be accepted
+			define( 'SECRET_HEADER_KEY', '12345' );
+
+Step 4: Load up the example/index.php webpage in your browser and you have successfully 
+		connected a user to a room on the node websocket server!
+
+[Creating/Running Your Own Front End]
 Step 1: Make sure your node websocket server is running in the background.
 
 Step 2: Include socketio.io.js and nwsdatahandler.js scripts in your html.
 
-Step 3: Instantiate the nwsdatahandler.js. (See example/index.html)
+		<!-- Socket.io needed for connection the node server -->
+		<script src="../socket.io.js" type="text/javascript"></script>
+
+		<!-- Include helper I wrote to make things easier -->
+		<script src="../nwsdatahandler.js" type="text/javascript"></script>
+
+Step 3: Instantiate the nwsdatahandler.js. (See example/index.php)
 
 Step 4: Load up the webpage in your browser and you have successfully 
-connected a user to a room on the node websocket server!
+		connected a user to a room on the node websocket server!
 
 ==========================================================================
 

@@ -27,10 +27,13 @@
 		<meta name="keywords" content="Node, Websocket, Websockets, Node Websocket Server, Node js" />
 		<meta name="author" content="Justin Stolpe" />
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+		<!-- Include server defines.php file -->
+		<?php include( 'defines.php' ); ?>
 		
 		<script>
 			// url to connect to the node websocket server
-			var websocketUrl = 'http://localhost:3000';
+			var websocketUrl = '<?php echo WEBSOCKET_URL; ?>';
 
 			// make connection to the websocket server
 			var socket = io( websocketUrl );

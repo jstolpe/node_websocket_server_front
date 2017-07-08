@@ -1,15 +1,12 @@
 <?php
-	// url to connect to the node websocket server
-	$websocketUrl = 'http://localhost:3000';
+	// include server defines.php file
+	include( 'defines.php' );
 
 	// room name to broadcast data out to
 	$roomName = 'active_users';
 
-	// must match defines.js nodeServerHeaderKey in node_websocket_server repo
-	$secretheaderkey = '12345';
-
 	// this is the endpoint for broadcasting data to the node websocket server
-	$broadcastUrl = $websocketUrl . '/broadcast';
+	$broadcastUrl = WEBSOCKET_URL . '/broadcast';
 
 	// this data will be broadcast out to all users in the room specified on the front end
 	$broadcastData = array(
@@ -28,7 +25,7 @@
 	$ch = curl_init();
 	curl_setopt( $ch, CURLOPT_URL, $broadcastUrl );
 	curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
-		'secretheaderkey: ' . $secretheaderkey,
+		'secretheaderkey: ' . SECRET_HEADER_KEY,
         'Content-Type: application/json',
         'Content-Length: ' . strlen( $data ) ) );
     curl_setopt( $ch, CURLOPT_POST, 1 );
