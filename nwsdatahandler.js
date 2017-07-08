@@ -6,7 +6,7 @@
  * @source https://github.com/jstolpe/node_websocket_server_front
  * @param Object args 
  *		{
- *			websocketUrl: 'urlToWebsocketServer',
+ *			socket: socketConnectionToTheNodeWebsocketServer,
  *			userKey: 'uniqueUserId',
  *			roomName: 'nameOfRoomUserIsJoining',
  *			nodeServerDataReceiver: function( data ) { 
@@ -45,7 +45,7 @@ var nwsDataHandler = (function( args ) {
 	 *
 	 * @param Object args 
 	 *		{
-	 *			websocketUrl: 'urlToWebsocketServer',
+	 *			socket: socketConnectionToTheNodeWebsocketServer,
 	 *			userKey: 'uniqueUserId',
 	 *			roomName: 'nameOfRoomUserIsJoining',
 	 *			nodeServerDataReceiver: function( data ) { 
@@ -60,6 +60,9 @@ var nwsDataHandler = (function( args ) {
 	 */
 	var nwsDataHandler = function( args ) {
 		var self = this;
+
+		// socket connection to use
+		self.socket = args.socket;
 
 		// name of room user is joining
 		self.roomName = args.roomName;
@@ -82,9 +85,6 @@ var nwsDataHandler = (function( args ) {
 		    // bind function to self cause we love self
 		    self.customDataReceiver.bind(self);
 		}
-
-		// connect to the url the websocket server is on
-		self.socket = io( args.websocketUrl );
 
 		// connect to room on the node websocket server
 		self.connectToRoom( self.roomName );

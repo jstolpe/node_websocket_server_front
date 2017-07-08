@@ -7,9 +7,12 @@ https://github.com/jstolpe/node_websocket_server
 
 Step 1: Make sure your node websocket server is running in the background.
 
-Step 2: Instantiate the nwsdatahandler.js with the correct params. (See index.html)
+Step 2: Include socketio.io.js and nwsdatahandler.js scripts in your html.
 
-Step 3: You have successfully connected a user to a room on the node websocket server!
+Step 3: Instantiate the nwsdatahandler.js. (See example/index.html)
+
+Step 4: Load up the webpage in your browser and you have successfully 
+connected a user to a room on the node websocket server!
 
 ==========================================================================
 

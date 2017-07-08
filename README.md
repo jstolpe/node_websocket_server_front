@@ -1,4 +1,4 @@
-# node_websocket_server_front
+# node_websocket_server_front - https://github.com/jstolpe/node_websocket_server_front
 
 [BACK END NODE WEBSOCKET SERVER REPO] - this MUST BE setup for the front end to work!
 https://github.com/jstolpe/node_websocket_server
