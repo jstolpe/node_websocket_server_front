@@ -16,7 +16,7 @@
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Using jQuery cause lazy -->
-		<link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
 
 		<!-- Style things up a little bit -->
 		<link href="css.css" rel="stylesheet" type="text/css">
