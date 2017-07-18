@@ -86,11 +86,11 @@ var nwsDataHandler = (function( args ) {
 		    self.customDataReceiver.bind(self);
 		}
 
-		// do things when the node websocket server sends us data
-		self.setupRoomListener();
-
 		// connect to room on the node websocket server
 		self.connectToRoom( self.roomName );
+
+		// do things when the node websocket server sends us data
+		self.setupRoomListener();
 	};
 
 	/**
@@ -103,13 +103,13 @@ var nwsDataHandler = (function( args ) {
 	nwsDataHandler.prototype.connectToRoom = function() {
 		var self = this;
 
-		self.socket.on('connect', function() { // connect to a room on the node server
+		//self.socket.on('connect', function() { // connect to a room on the node server
 			// get room data for connecting
 			var roomData = self.getRoomData( self.roomName );
 
 			// emit room data to the node websocket server so the user gets added to the node server room
 			self.socket.emit( 'room', roomData );
-		});
+		//});
 	};
 
 	/**
