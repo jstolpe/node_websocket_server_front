@@ -86,11 +86,11 @@ var nwsDataHandler = (function( args ) {
 		    self.customDataReceiver.bind(self);
 		}
 
-		// connect to room on the node websocket server
-		self.connectToRoom( self.roomName );
-
 		// do things when the node websocket server sends us data
 		self.setupRoomListener();
+
+		// connect to room on the node websocket server
+		self.connectToRoom( self.roomName );
 	};
 
 	/**
