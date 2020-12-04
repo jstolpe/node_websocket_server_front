@@ -95,7 +95,7 @@
 				 *
 				 * @return void
 				 */
-				nodeServerDataReceiver: function( data ) {
+				nodeServerDataReceiver: function( data ) {console.log(data);
 					// create html to display the data the node websocket server just sent us about the room
 					var html = '<div class="output-row">' +
 						'<div><span class="fa fa-user"></span> User Key: <b>' + data.action.userKey + '</b> ----- Action: <b>' + data.action.name + '</b> ----- Room: <b>' + data.room.name + '</b></div>' +
@@ -126,7 +126,7 @@
 				 *
 				 * @return void
 				 */
-				customDataReceiver: function( data ) {
+				customDataReceiver: function( data ) {console.log(data);
 		  			// create html to display the data the node websocket server just sent us about the room
 					var html = '<div class="output-row">' +
 						'<div><b>' + data.user_key + '</b> <span class="fa fa-comment"></span> </div>' +
